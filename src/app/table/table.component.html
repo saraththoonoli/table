@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- Button to toggle -->
+  <button class="btn btn-danger" (click)="toggleTable()">View Table</button>
+  &nbsp;
+
+  <!-- Button to change the background color-->
+  <button class="btn btn-success" (click)="changeTableStyles()">
+    Change Table Style
+  </button> &nbsp;
+  <button class="btn btn-primary" (click)="clearStyle()">Clear style</button>
+
+  <table class="table" *ngIf="showTable" [ngStyle]="tableStyles">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">CITY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th>{{ user.id }}</th>
+        <th>{{ user.name }}</th>
+        <td>{{ user.age }}</td>
+        <td>{{ user.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
